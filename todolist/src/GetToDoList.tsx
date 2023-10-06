@@ -46,8 +46,7 @@ export  default function GetToDoListClass()
   }
     
   async function callCompleteTask(taskId: string) {
-    try {
-      const result = await completeTask(taskId);  
+    try { 
       fetchtodolist();          
   }
   catch (e: any) {
@@ -58,7 +57,6 @@ export  default function GetToDoListClass()
   
   async function callDeleteTask(taskId: string) {
     try {
-      const result = await DeleteTask(taskId);  
       fetchtodolist();          
   }
   catch (e: any) {

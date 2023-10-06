@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import LoginPage from "./Login";
 import PrivateRoute from "./auth/PrivateRoute";
 import GetToDoListClass from "./GetToDoList";
-import { Login } from "./services/todolistapi";
 
 export const AppRoutes = (
     <>

@@ -9,7 +9,6 @@ interface AddToDoListFormProps {
 
 export const AddToDoList: FC<AddToDoListFormProps> = ({onInsert, onCancel }) => {
     //States
-    const [taskListModel, settaskListModel] = useState<TaskListRequest>({taskName: "", description: "", taskStartDate:new Date(), taskEndDate: new Date(), totalEffortRequired: ""});
     const [taskName, settaskName] = useState("");
     const [description, setdescription] = useState("");
     const [taskStartDate, settaskStartDate] = useState("");
@@ -17,7 +16,6 @@ export const AddToDoList: FC<AddToDoListFormProps> = ({onInsert, onCancel }) => 
     const [totalEffortRequired, settotalEffortRequired] = useState("");
 
     const clearForm = () => {
-        settaskListModel({taskName: "", description: "", taskStartDate: new Date(), taskEndDate:new Date(), totalEffortRequired: ""});
         settaskName("");
         setdescription("");
         settaskStartDate("");   
