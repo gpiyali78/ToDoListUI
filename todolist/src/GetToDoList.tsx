@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AddToDoList } from "./AddToDoList";
 import { TaskListResponse } from "./model/gettodolist";
 import React from "react";
-import { DeleteTask, GetToDoList, completeTask } from "./services/todolistapi";
+import { GetToDoList } from "./services/todolistapi";
 import Modal from 'react-modal';
 import './GetToDoList.css';
 
