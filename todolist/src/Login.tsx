@@ -39,7 +39,7 @@ export default function LoginPage() {
     <div>
       <h1>Login Page</h1>
         <label>
-          Username:
+          UserName:
           <input type="text" value={username} onChange={handleUsernameChange} />
         </label>
         <br />
