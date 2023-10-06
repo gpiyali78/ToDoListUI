@@ -4,7 +4,10 @@ import { LoginModel } from "../model/login";
 
 const apiUrl = "https://fetchtodolistfunc.azurewebsites.net/";
 
-let token="";
+//get to do list list
+export async function GetToDoList(): Promise<TaskListResponse[]> {
+  try { 
+    let token="";
     const tokenString: string | null = localStorage.getItem('token');
 
     if (tokenString !== null) {
@@ -16,11 +19,6 @@ let token="";
       // Handle the case where the token is null (e.g., not found in local storage)
       console.log("Token not found in local storage");
     }
-
-//get to do list list
-export async function GetToDoList(): Promise<TaskListResponse[]> {
-  try { 
-    console.log("get all token ", token);
         const response = await fetch(apiUrl +"api/getall", {
       method: "GET",
       headers: {
@@ -47,6 +45,18 @@ export async function GetToDoList(): Promise<TaskListResponse[]> {
  // Define a function to add a new task using the API
  export async function addTask(task:TaskListRequest): Promise<string> {
   try {
+    let token="";
+    const tokenString: string | null = localStorage.getItem('token');
+
+    if (tokenString !== null) {
+      // Token is not null, you can safely use it
+      const tokenObject = JSON.parse(tokenString);
+      token = tokenObject.token;
+      console.log(token);  
+    } else {
+      // Handle the case where the token is null (e.g., not found in local storage)
+      console.log("Token not found in local storage");
+    }
     // Make a POST request to the API with the task data
     const response = await fetch(apiUrl + "api/add-task", {
       method: "POST",
@@ -74,6 +84,18 @@ export async function GetToDoList(): Promise<TaskListResponse[]> {
 
 export async function completeTask(taskid:string): Promise<string> {
   try {
+    let token="";
+    const tokenString: string | null = localStorage.getItem('token');
+
+    if (tokenString !== null) {
+      // Token is not null, you can safely use it
+      const tokenObject = JSON.parse(tokenString);
+      token = tokenObject.token;
+      console.log(token);  
+    } else {
+      // Handle the case where the token is null (e.g., not found in local storage)
+      console.log("Token not found in local storage");
+    }
     // Make a POST request to the API with the task data
     const response = await fetch(apiUrl + "api/update-task/" + taskid , {
       method: "PUT",
@@ -100,6 +122,18 @@ export async function completeTask(taskid:string): Promise<string> {
 
 export async function DeleteTask(taskid:string): Promise<string> {
   try {
+    let token="";
+    const tokenString: string | null = localStorage.getItem('token');
+
+    if (tokenString !== null) {
+      // Token is not null, you can safely use it
+      const tokenObject = JSON.parse(tokenString);
+      token = tokenObject.token;
+      console.log(token);  
+    } else {
+      // Handle the case where the token is null (e.g., not found in local storage)
+      console.log("Token not found in local storage");
+    }
     // Make a POST request to the API with the task data
     const response = await fetch(apiUrl + "api/delete-product/" + taskid, {
       method: "DELETE",
