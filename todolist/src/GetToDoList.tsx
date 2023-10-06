@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AddToDoList } from "./AddToDoList";
 import { TaskListResponse } from "./model/gettodolist";
 import React from "react";
-import { GetToDoList } from "./services/todolistapi";
+import { DeleteTask, GetToDoList, completeTask } from "./services/todolistapi";
 import Modal from 'react-modal';
 import './GetToDoList.css';
 
@@ -47,6 +47,7 @@ export  default function GetToDoListClass()
     
   async function callCompleteTask(taskId: string) {
     try { 
+      await completeTask(taskId);
       fetchtodolist();          
   }
   catch (e: any) {
@@ -57,6 +58,7 @@ export  default function GetToDoListClass()
   
   async function callDeleteTask(taskId: string) {
     try {
+      await DeleteTask(taskId);
       fetchtodolist();          
   }
   catch (e: any) {

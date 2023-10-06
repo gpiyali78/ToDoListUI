@@ -20,6 +20,7 @@ let token="";
 //get to do list list
 export async function GetToDoList(): Promise<TaskListResponse[]> {
   try { 
+    console.log("get all token ", token);
         const response = await fetch(apiUrl +"api/getall", {
       method: "GET",
       headers: {
